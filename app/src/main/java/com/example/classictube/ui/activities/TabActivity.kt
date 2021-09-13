@@ -1,4 +1,4 @@
-package com.example.classictube.ui.activity
+package com.example.classictube.ui.activities
 
 import android.view.LayoutInflater
 import com.example.classictube.databinding.ActivityTabBinding
