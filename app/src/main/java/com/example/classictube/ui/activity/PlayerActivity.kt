@@ -1,4 +1,4 @@
-package com.example.classictube.activity
+package com.example.classictube.ui.activity
 
 
 import android.view.LayoutInflater

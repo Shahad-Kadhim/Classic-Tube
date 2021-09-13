@@ -1,9 +1,9 @@
-package com.example.classictube.activity
+package com.example.classictube.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.example.classictube.BaseInterface
+import com.example.classictube.ui.BaseInterface
 
 abstract class BaseActivity <VB : ViewBinding> : AppCompatActivity() , BaseInterface<VB> {
 

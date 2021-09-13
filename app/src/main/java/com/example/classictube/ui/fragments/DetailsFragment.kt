@@ -1,4 +1,4 @@
-package com.example.classictube.fragments
+package com.example.classictube.ui.fragments
 
 
 import android.view.LayoutInflater
