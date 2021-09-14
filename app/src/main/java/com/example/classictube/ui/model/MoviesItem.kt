@@ -4,8 +4,9 @@ package com.example.classictube.ui.model
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import java.util.ArrayList
 
-data class MoviesItem (
+data class MoviesItem(
     @SerializedName("art")
     val art: String?,
     @SerializedName("description")
@@ -17,32 +18,41 @@ data class MoviesItem (
     @SerializedName("id")
     val id: String?,
     @SerializedName("ratings")
-    val ratings: String?,
+    val ratings: ArrayList<String>?,
     @SerializedName("title")
     val title: String?,
     @SerializedName("url")
     val url: String?,
     @SerializedName("year")
     val year: Int?
-):Parcelable{
+):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
-        parcel.readString(),
+        parcel.createStringArrayList(),
         parcel.readString(),
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int
-    )
-
-    override fun describeContents(): Int {
-        TODO("Not yet implemented")
+    ) {
     }
 
-    override fun writeToParcel(p0: Parcel?, p1: Int) {
-        TODO("Not yet implemented")
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(art)
+        parcel.writeString(description)
+        parcel.writeString(director)
+        parcel.writeValue(duration)
+        parcel.writeString(id)
+        parcel.writeStringList(ratings)
+        parcel.writeString(title)
+        parcel.writeString(url)
+        parcel.writeValue(year)
+    }
+
+    override fun describeContents(): Int {
+        return 0
     }
 
     companion object CREATOR : Parcelable.Creator<MoviesItem> {
