@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassicTube" >
         <activity
-            android:name=".ui.PlayerActivity"
+            android:name=".ui.activities.PlayerActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.activities.TabActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
