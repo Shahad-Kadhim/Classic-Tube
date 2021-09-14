@@ -1,0 +1,37 @@
+package com.example.classictube.ui.adapter.movieAdapters
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.example.classictube.R
+import com.example.classictube.data.domain.CategoryItem
+import com.example.classictube.databinding.ItemMovieBinding
+import com.example.classictube.ui.adapter.HomeActionListener
+
+
+class HeaderAdapter(items: List<CategoryItem>, listener: HomeActionListener) :BaseRecyclerAdapter<CategoryItem>(items,listener) {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int,
+    ): BaseMovieViewHolder =
+        MovieViewHolder(
+            LayoutInflater
+                .from(parent.context)
+                .inflate(R.layout.item_movie, parent, false)
+        )
+
+    override fun onBindViewHolder(holder: BaseMovieViewHolder, position: Int) {
+        when (holder){
+            is  MovieViewHolder->{
+                holder.binding.apply {
+
+                }
+            }
+        }
+    }
+
+    class MovieViewHolder(itemView: View) :BaseMovieViewHolder(itemView){
+        val binding = ItemMovieBinding.bind(itemView)
+    }
+
+}

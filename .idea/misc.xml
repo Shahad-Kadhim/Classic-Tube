@@ -5,6 +5,11 @@
       <map>
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_player.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_movie_one.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_movie_two.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_movies_list.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_movies_one_list.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_movies_two_list.xml" value="0.19722222222222222" />
       </map>
     </option>
   </component>
