@@ -5,39 +5,37 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.classictube.R
 import com.example.classictube.data.domain.CategoryItem
-import com.example.classictube.data.domain.HomeItem
-import com.example.classictube.data.enum.HomeItemType
-import com.example.classictube.databinding.ItemMoviesListBinding
-import com.example.classictube.databinding.ItemMoviesOneListBinding
+import com.example.classictube.data.response.MoviesCategory
+import com.example.classictube.databinding.*
 import com.example.classictube.ui.adapter.HomeActionListener
 import java.lang.Exception
 
-class  NestedAdapter (items: List<HomeItem>, listener: HomeActionListener):BaseRecyclerAdapter<HomeItem>(items, listener) {
+class  NestedAdapter (items: List<List<MoviesCategory>>, listener: HomeActionListener):BaseRecyclerAdapter<List<MoviesCategory>>(items, listener) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseMovieViewHolder {
         return when(viewType){
             VIEW_TYPE_HEADER -> {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movies_list, parent, false)
-                MovieViewHolder(view)
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycle_header, parent, false)
+                HeaderViewHolder(view)
             }
-            VIEW_TYPE_MOVIES -> {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movies_one_list, parent, false)
-                MoviesOneViewHolder(view)
+            VIEW_TYPE_CATEGORIES -> {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycle_category, parent, false)
+                CategoryViewHolder(view)
             }
             else -> throw Exception("UNKNOWN VIEW TYPE")
         }
     }
 
     override fun onBindViewHolder(holder: BaseMovieViewHolder, position: Int) {
-        val currentItem=items[position].item.map { CategoryItem(it.title,it.moviesItems)}
+        val currentItem=items[position].map { CategoryItem(it.title,it.moviesItems)}
         when (holder) {
-            is MovieViewHolder -> {
+            is HeaderViewHolder -> {
                 holder.binding.recyclerMovies.apply {
                     adapter=HeaderAdapter(currentItem,listener)
                 }
             }
-            is MoviesOneViewHolder -> {
+            is CategoryViewHolder -> {
                 holder.binding.recyclerMoviesOne.apply {
-                    adapter=ItemesAdapter(currentItem,listener)
+                    adapter=CategoryAdapter(currentItem,listener)
                 }
             }
         }
@@ -46,20 +44,21 @@ class  NestedAdapter (items: List<HomeItem>, listener: HomeActionListener):BaseR
     override fun getItemViewType(position: Int): Int {
         return when(position){
             0 -> VIEW_TYPE_HEADER
-            else -> VIEW_TYPE_MOVIES
+            else -> VIEW_TYPE_CATEGORIES
         }
     }
 
-    class MoviesOneViewHolder(itemView: View) : BaseMovieViewHolder(itemView){
-        val binding = ItemMoviesOneListBinding.bind(itemView)
+    class CategoryViewHolder(itemView: View) : BaseMovieViewHolder(itemView){
+        val binding = ItemRecycleCategoryBinding.bind(itemView)
     }
-    class MovieViewHolder(itemView: View) : BaseMovieViewHolder(itemView){
-        val binding = ItemMoviesListBinding.bind(itemView)
+
+    class HeaderViewHolder(itemView: View) : BaseMovieViewHolder(itemView){
+        val binding = ItemRecycleHeaderBinding.bind(itemView)
     }
 
     companion object{
         private const val VIEW_TYPE_HEADER = 1
-        private const val VIEW_TYPE_MOVIES = 2
+        private const val VIEW_TYPE_CATEGORIES = 2
     }
 
 }

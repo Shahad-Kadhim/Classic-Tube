@@ -1,7 +1,6 @@
-package com.example.classictube.data.domain
+package com.example.classictube.data.response
 
 import com.google.gson.annotations.SerializedName
-
 
 data class MoviesCategory(
     @SerializedName("description")
@@ -11,7 +10,7 @@ data class MoviesCategory(
     @SerializedName("image")
     val image: String?,
     @SerializedName("items")
-    val moviesItems: List<MovieItem>,
+    val moviesItems: List<MoviesItem>,
     @SerializedName("title")
     val title: String
 )
