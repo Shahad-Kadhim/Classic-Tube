@@ -1,4 +1,4 @@
-package com.example.classictube.ui.model
+package com.example.classictube.data.response
 
 
 import android.os.Parcel
