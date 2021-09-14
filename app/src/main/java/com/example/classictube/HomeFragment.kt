@@ -7,7 +7,7 @@ class HomeFragment  {
 
     // class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionsListener {
     //     override val bindingInflater: (LayoutInflater) -> FragmentHomeBinding = FragmentHomeBinding::inflate
-    //    lateinit var adapter: BaseAdapter
+    //    lateinit var adapter: HomeAdapter
     //
     //    override fun setup() {
     //        val itemsList: MutableList<HomeItem<Any>> = mutableListOf()

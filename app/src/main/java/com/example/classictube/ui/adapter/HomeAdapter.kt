@@ -10,6 +10,9 @@ import com.example.classictube.data.movie.Movie
 import com.example.classictube.data.movie.MovieOne
 import com.example.classictube.data.movie.MovieTwo
 import com.example.classictube.data.domain.enum.HomeItemType
+import com.example.classictube.ui.adapter.movieAdapters.MovieAdapter
+import com.example.classictube.ui.adapter.movieAdapters.MovieOneAdapter
+import com.example.classictube.ui.adapter.movieAdapters.MovieTwoAdapter
 import java.lang.Exception
 
 class  HomeAdapter (private val items: List<HomeItem<Any>>, private val listener: HomeActionListener) : RecyclerView.Adapter<HomeAdapter.BaseHomeViewHolder>() {

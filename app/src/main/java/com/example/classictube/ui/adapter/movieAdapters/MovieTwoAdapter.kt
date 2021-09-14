@@ -1,12 +1,12 @@
-package com.example.classictube.ui.adapter
+package com.example.classictube.ui.adapter.movieAdapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.classictube.R
-import com.example.classictube.data.movie.MovieOne
 import com.example.classictube.data.movie.MovieTwo
+import com.example.classictube.ui.adapter.HomeActionListener
 
 class MovieTwoAdapter(private val items: List<MovieTwo>, private val listener: HomeActionListener) : RecyclerView.Adapter<MovieTwoAdapter.BaseMovieTwoViewHolder>() {
 
@@ -20,7 +20,7 @@ class MovieTwoAdapter(private val items: List<MovieTwo>, private val listener: H
             bindMovieTwo(holder as MovieTwoViewHolder, position)
         }
 
-        private fun bindMovieTwo(holder:MovieTwoViewHolder, position: Int){
+        private fun bindMovieTwo(holder: MovieTwoViewHolder, position: Int){
             val currentMovieTwo = items[position]
             holder.binding.apply{
                 //هنا توصيل البيانات للرسايكيلر الثالثه

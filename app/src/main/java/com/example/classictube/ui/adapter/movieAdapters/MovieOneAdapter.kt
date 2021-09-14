@@ -1,4 +1,4 @@
-package com.example.classictube.ui.adapter
+package com.example.classictube.ui.adapter.movieAdapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.classictube.R
 import com.example.classictube.data.movie.MovieOne
+import com.example.classictube.ui.adapter.HomeActionListener
 
 class MovieOneAdapter (private val items: List<MovieOne>, private val listener: HomeActionListener) : RecyclerView.Adapter<MovieOneAdapter.BaseMovieOneViewHolder>() {
 
@@ -19,7 +20,7 @@ class MovieOneAdapter (private val items: List<MovieOne>, private val listener: 
             bindMovieOne(holder as MovieOneViewHolder, position)
         }
 
-        private fun bindMovieOne(holder:MovieOneViewHolder, position: Int){
+        private fun bindMovieOne(holder: MovieOneViewHolder, position: Int){
             val currentMovieOne = items[position]
             holder.binding.apply{
                 //هنا توصيل البيانات للرسايكيلر الثانيه
