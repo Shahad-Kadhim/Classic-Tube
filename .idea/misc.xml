@@ -4,6 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_player.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_tab.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_tap.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/fragment_details.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/fragment_home.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_add_movie.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/item_movie.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/recycler_movies.xml" value="0.19270833333333334" />
       </map>
     </option>
   </component>
