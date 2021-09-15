@@ -7,7 +7,6 @@ import java.io.IOException
 
 object Network {
 
-    private var nameOfCategories : List<String>?=null
 
     private const val URL = "https://raw.githubusercontent.com/Bareq-altaamah/mock/main/classic.json"
     private val client = OkHttpClient()
@@ -24,11 +23,9 @@ object Network {
             override fun onResponse(call: Call, response: Response) {
                 val body = response.body?.string().toString()
                 val homeFeed = gson.fromJson(body, Feed::class.java)
-                nameOfCategories = homeFeed.feed?.map { it.title }
                 onResponse(homeFeed)
             }
         })
     }
-    fun categoriesName()= nameOfCategories
 
 }
