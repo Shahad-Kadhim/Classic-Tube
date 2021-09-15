@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding
 import com.example.classictube.ui.BaseInterface
 
 
-abstract class BaseFragment<VB:ViewBinding>: Fragment() , BaseInterface<VB> {
+abstract class BaseFragment<VB: ViewBinding> : Fragment() , BaseInterface<VB> {
 
     override var _binding: ViewBinding? = null
 

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.example.classictube.ui.BaseInterface
 
-abstract class BaseActivity <VB : ViewBinding> : AppCompatActivity() , BaseInterface<VB> {
+
+abstract class BaseActivity <VB : ViewBinding> : AppCompatActivity()
+    , BaseInterface<VB> {
 
     override var _binding: ViewBinding? = null
 
