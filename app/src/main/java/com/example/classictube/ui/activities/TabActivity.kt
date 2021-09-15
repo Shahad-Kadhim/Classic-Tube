@@ -11,9 +11,9 @@ class TabActivity : BaseActivity<ActivityTabBinding>() {
 
     override val LOG_TAG: String = "Tab_Activity"
     override val bindingInflater: (LayoutInflater) -> ActivityTabBinding
-            = ActivityTabBinding::inflate
+       = ActivityTabBinding::inflate
 
-    override fun addCallbacks() {  }
+    override fun addCallbacks() {   }
 
     override fun setUp() {
         replaceFragment(HomeFragment())
@@ -25,6 +25,5 @@ class TabActivity : BaseActivity<ActivityTabBinding>() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment).addToBackStack(null).commit()
     }
-
 
 }

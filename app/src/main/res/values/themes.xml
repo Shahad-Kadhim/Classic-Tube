@@ -30,4 +30,9 @@
         <item name="android:scaleType">centerCrop</item>
     </style>
 
+    <style name="RatingBar">
+        <item name="colorControlActivated">@color/yellow</item>
+        <item name="colorControlNormal">#ffffff</item>
+    </style>
+
 </resources>
