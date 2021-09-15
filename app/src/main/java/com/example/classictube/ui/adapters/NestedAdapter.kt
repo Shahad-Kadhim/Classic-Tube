@@ -1,16 +1,19 @@
-package com.example.classictube.ui.adapter.movieAdapters
+package com.example.classictube.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.classictube.R
 import com.example.classictube.data.domain.CategoryItem
 import com.example.classictube.data.response.MoviesCategory
 import com.example.classictube.databinding.*
-import com.example.classictube.ui.adapter.HomeActionListener
+import com.mig35.carousellayoutmanager.CarouselLayoutManager
+import com.mig35.carousellayoutmanager.CarouselZoomPostLayoutListener
 import java.lang.Exception
 
-class  NestedAdapter (items: List<List<MoviesCategory>>, listener: HomeActionListener):BaseRecyclerAdapter<List<MoviesCategory>>(items, listener) {
+class  NestedAdapter (items: List<List<MoviesCategory>>, listener: HomeActionListener):
+    BaseRecyclerAdapter<List<MoviesCategory>>(items, listener) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseMovieViewHolder {
         return when(viewType){
             VIEW_TYPE_HEADER -> {
@@ -29,13 +32,13 @@ class  NestedAdapter (items: List<List<MoviesCategory>>, listener: HomeActionLis
         val currentItem=items[position].map { CategoryItem(it.title,it.moviesItems)}
         when (holder) {
             is HeaderViewHolder -> {
-                holder.binding.recyclerMovies.apply {
-                    adapter=HeaderAdapter(currentItem,listener)
+                holder.binding.recyclerMoviesHeader.apply {
+                    adapter= HeaderAdapter(currentItem,listener)
                 }
             }
             is CategoryViewHolder -> {
-                holder.binding.recyclerMoviesOne.apply {
-                    adapter=CategoryAdapter(currentItem,listener)
+                holder.binding.recyclerMoviesCategory.apply {
+                    adapter= CategoryAdapter(currentItem,listener)
                 }
             }
         }

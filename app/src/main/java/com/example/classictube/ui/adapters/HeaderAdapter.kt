@@ -1,4 +1,4 @@
-package com.example.classictube.ui.adapter.movieAdapters
+package com.example.classictube.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import com.example.classictube.R
 import com.example.classictube.data.domain.CategoryItem
 import com.example.classictube.databinding.ItemMovieHeaderBinding
-import com.example.classictube.ui.adapter.HomeActionListener
 
 
-class HeaderAdapter(items: List<CategoryItem>, listener: HomeActionListener) :BaseRecyclerAdapter<CategoryItem>(items,listener) {
+class HeaderAdapter(items: List<CategoryItem>, listener: HomeActionListener) :
+    BaseRecyclerAdapter<CategoryItem>(items,listener) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -22,15 +22,14 @@ class HeaderAdapter(items: List<CategoryItem>, listener: HomeActionListener) :Ba
 
     override fun onBindViewHolder(holder: BaseMovieViewHolder, position: Int) {
         when (holder){
-            is  MovieViewHolder->{
+            is MovieViewHolder ->{
                 holder.binding.apply {
-
                 }
             }
         }
     }
 
-    class MovieViewHolder(itemView: View) :BaseMovieViewHolder(itemView){
+    class MovieViewHolder(itemView: View) : BaseMovieViewHolder(itemView){
         val binding = ItemMovieHeaderBinding.bind(itemView)
     }
 
