@@ -24,7 +24,6 @@ class HeaderAdapter(items: List<CategoryItem>, listener: HomeActionListener) :
         when (holder){
             is MovieViewHolder ->{
                 holder.binding.apply {
-
                 }
             }
         }

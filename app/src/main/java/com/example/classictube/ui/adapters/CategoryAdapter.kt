@@ -24,7 +24,6 @@ class CategoryAdapter (items: List<CategoryItem>, listener: HomeActionListener) 
         when(holder){
             is MovieOneViewHolder ->{
                 holder.binding.apply {
-
                 }
             }
         }
