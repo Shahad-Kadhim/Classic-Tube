@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import com.example.classictube.data.Network
 import com.example.classictube.data.domain.CategoryItem
+import com.example.classictube.data.getNamesOfCategories
 import com.example.classictube.data.moviesCategoryFilter
 import com.example.classictube.data.response.Feed
 import com.example.classictube.data.response.MoviesCategory
@@ -40,7 +41,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
 
     }
     private fun onSuccess(feed:Feed){
-        val list=Network.categoriesName()?.map { CategoryItem(it,moviesCategoryFilter(it,feed.feed!!)) }
+        val list= getNamesOfCategories(feed.feed!!)?.map { CategoryItem(it,moviesCategoryFilter(it,feed.feed!!)) }
         this.requireActivity().runOnUiThread {
             binding?.apply {
                 recyclerHeader.adapter= feed.feed?.flatMap { it.moviesItems }?.let { HeaderAdapter(it,this@HomeFragment) }
