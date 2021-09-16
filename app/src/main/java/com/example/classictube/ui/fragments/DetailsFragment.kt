@@ -4,10 +4,12 @@ package com.example.classictube.ui.fragments
 import android.content.Intent
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide
+import com.example.classictube.data.response.MoviesCategory
 import com.example.classictube.data.response.MoviesItem
 import com.example.classictube.databinding.FragmentDetailsBinding
 import com.example.classictube.ui.activities.PlayerActivity
 import com.example.classictube.util.Constant
+import kotlinx.android.synthetic.main.fragment_details.*
 
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
@@ -29,6 +31,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
                 movieName.text=movie.title
                 movie.ratings?.let{ movieRating.rating = 2.9f }
                 movieTime.text=movie.duration.toString()
+                year.text = movie.year.toString()
                 Glide.with(movieImage).load(movie.art).centerInside().into(movieImage)
             }
         }
