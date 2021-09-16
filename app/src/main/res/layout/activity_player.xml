@@ -10,11 +10,7 @@
         android:id="@+id/video_player"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:focusable="true"
-        app:resize_mode="fit"
-        app:hide_on_touch="true"
         app:show_timeout="5000"
-        app:use_controller="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

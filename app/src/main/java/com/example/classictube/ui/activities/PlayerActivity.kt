@@ -6,19 +6,21 @@ import com.example.classictube.databinding.ActivityPlayerBinding
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.SimpleExoPlayer
 
+
 class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
+
 
     override val LOG_TAG: String = "Player_Activity"
     override val bindingInflater: (LayoutInflater) -> ActivityPlayerBinding
         = ActivityPlayerBinding::inflate
 
-    lateinit var simpleExoPlayer : SimpleExoPlayer
+    private lateinit var simpleExoPlayer: SimpleExoPlayer
 
     val STREAM_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
 
     override fun addCallbacks() {   }
 
-    override fun setUp() {   }
+    override fun setUp() { initializePlayer() }
 
     private fun initializePlayer() {
         simpleExoPlayer = SimpleExoPlayer.Builder(this).build()
@@ -37,31 +39,27 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
 
     }
 
-    private fun releasePlayer() {
-        simpleExoPlayer.release()
+    private fun playPlayer() {
+        simpleExoPlayer.play()
     }
 
     private fun pausePlayer() {
         simpleExoPlayer.pause()
     }
 
-    public override fun onStart() {
-        super.onStart()
-        initializePlayer()
-    }
-
-    public override fun onResume() {
+    override fun onResume(){
         super.onResume()
-        pausePlayer()
+        playPlayer()
     }
 
-    public override fun onPause() {
+    override fun onPause() {
         super.onPause()
         pausePlayer()
     }
 
-    public override fun onStop() {
+    override fun onStop() {
         super.onStop()
-        releasePlayer()
+        pausePlayer()
     }
 }
+
