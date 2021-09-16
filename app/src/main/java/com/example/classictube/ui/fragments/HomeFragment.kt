@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.classictube.R
 import com.example.classictube.data.Network
 import com.example.classictube.data.domain.CategoryItem
-import com.example.classictube.data.getNamesOfCategories
+import com.example.classictube.data.getListsOfCategories
 import com.example.classictube.data.response.Feed
 import com.example.classictube.data.response.MoviesItem
 import com.example.classictube.databinding.FragmentHomeBinding
@@ -30,7 +30,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
     private fun onSuccess(feed:Feed){
         this.requireActivity().runOnUiThread {
             binding?.apply {
-                recycler.adapter=NestedAdapter(getNamesOfCategories(feed.feed!!),this@HomeFragment)
+                recycler.adapter=NestedAdapter(getListsOfCategories(feed.feed!!),this@HomeFragment)
             }
         }
     }

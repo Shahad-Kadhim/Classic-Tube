@@ -6,14 +6,13 @@ import com.example.classictube.data.response.MoviesCategory
 fun moviesCategoryFilter(title: String, categoryList: List<MoviesCategory>) =
     categoryList.filter { it.title == title }.first().moviesItems
 
-var fullList: List<CategoryItem>? = null//where we can use it?
 
-fun getNamesOfCategories(categoryList: List<MoviesCategory>): List<CategoryItem> {
+fun getListsOfCategories(categoryList: List<MoviesCategory>): List<CategoryItem> {
     val list = categoryList.map { CategoryItem(it.title, moviesCategoryFilter(it.title, categoryList)) }
-    fullList = mutableListOf(
-        CategoryItem("", categoryList.flatMap { it.moviesItems })
+    val fullList = mutableListOf(
+        CategoryItem("", categoryList.flatMap { it.moviesItems }.shuffled())
     ).also {
         it.addAll(list)
     }
-    return list
+    return fullList
 }
