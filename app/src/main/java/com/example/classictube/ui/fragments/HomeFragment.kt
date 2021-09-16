@@ -59,7 +59,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
     }
 
     override fun onClickMovie(movie: MoviesItem) {
-        replaceFragment(
+        addFragment(
             DetailsFragment().apply {
                 arguments= Bundle().apply {
                     putParcelable(Constant.MOVIE_KEY,movie)
@@ -70,22 +70,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
     }
 
     override fun onClickSeeMore(category: CategoryItem) {
-       replaceFragment(
+       addFragment(
            CategoriesFragment().apply {
                 arguments= Bundle().apply {  putParcelable(Constant.CATEGORY_KEY,category)}
             }
        )
     }
 
-    override fun onClickGoToSaved() {
-        replaceFragment(SaveFragment())
+    override fun onClickGoToPlayList() {
+     //   addFragment(PlayListFragment())
     }
 
-    private fun replaceFragment(fragment: Fragment){
+    private fun addFragment(fragment: Fragment){
         requireActivity()
             .supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .add(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
     }

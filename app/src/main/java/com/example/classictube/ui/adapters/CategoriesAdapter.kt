@@ -8,7 +8,7 @@ import com.example.classictube.R
 import com.example.classictube.data.response.MoviesItem
 import com.example.classictube.databinding.ItemMovieCategoryBinding
 
-class CategoryAdapter (items: List<MoviesItem>, listener: HomeActionListener) :
+class CategoriesAdapter (items: List<MoviesItem>, listener: HomeActionListener) :
     BaseRecyclerAdapter<MoviesItem>(items, listener) {
 
     override fun onCreateViewHolder(
