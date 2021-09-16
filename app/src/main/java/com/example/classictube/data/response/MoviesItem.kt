@@ -6,7 +6,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import java.util.ArrayList
 
-data class MoviesItem(
+ class MoviesItem(
     @SerializedName("art")
     val art: String?,
     @SerializedName("description")
