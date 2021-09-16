@@ -33,7 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
     private fun loadSplash(){
         binding!!.splashLayout.animate()
             .translationY(-2500F)
-            .setDuration(1000).startDelay = 1000
+            .setDuration(800).startDelay = 500
     }
 
     private fun onSuccess(feed:Feed){
