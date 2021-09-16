@@ -26,6 +26,7 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() , BaseInterface<VB> {
         return _binding?.root
     }
 
+    abstract fun addCallbacks()
 }
 
 

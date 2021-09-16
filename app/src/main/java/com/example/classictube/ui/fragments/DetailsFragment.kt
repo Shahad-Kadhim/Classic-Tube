@@ -16,18 +16,20 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     override val bindingInflater: (LayoutInflater) ->
     FragmentDetailsBinding = FragmentDetailsBinding::inflate
 
-    override fun addCallbacks() {   }
+    private lateinit var movie :MoviesItem
+    override fun addCallbacks() {
+        binding?.playerButton?.setOnClickListener { watchMovie(movie)}
+    }
 
     override fun setUp() {
         arguments?.let {
-            val movie:MoviesItem=it.getParcelable(Constant.MOVIE_KEY)!!
+            movie=it.getParcelable(Constant.MOVIE_KEY)!!
             binding?.apply {
                 movieSynopsis.text=movie.description
                 movieName.text=movie.title
                 movie.ratings?.let{ movieRating.rating = 2.9f }
                 movieTime.text=movie.duration.toString()
                 Glide.with(movieImage).load(movie.art).centerInside().into(movieImage)
-                playerButton.setOnClickListener { watchMovie(movie)}
             }
         }
     }

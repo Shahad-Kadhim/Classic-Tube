@@ -18,7 +18,6 @@ abstract class BaseActivity <VB : ViewBinding> : AppCompatActivity()
         setContentView(requireNotNull(_binding).root)
 
         setUp()
-        addCallbacks()
 
     }
 

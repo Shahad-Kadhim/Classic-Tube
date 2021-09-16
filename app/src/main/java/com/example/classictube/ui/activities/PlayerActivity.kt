@@ -3,6 +3,7 @@ package com.example.classictube.ui.activities
 
 import android.view.LayoutInflater
 import com.example.classictube.databinding.ActivityPlayerBinding
+import com.example.classictube.util.Constant
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.SimpleExoPlayer
 
@@ -17,10 +18,9 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
     private lateinit var simpleExoPlayer: SimpleExoPlayer
 
 
-    override fun addCallbacks() {   }
 
     override fun setUp() {
-        intent.getStringExtra("URL_KEY")?.let{
+        intent.getStringExtra(Constant.URL_KEY)?.let{
             initializePlayer(it)
         }
     }

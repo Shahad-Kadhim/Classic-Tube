@@ -15,8 +15,6 @@ interface BaseInterface < VB: ViewBinding> {
     val binding
         get() =  _binding as VB?
 
-    fun addCallbacks()
-
     fun setUp()
 
     fun log(value: Any){
