@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:fontFamily="@font/actor"
         android:text="@string/drama"
-        android:textColor="@color/white"
+        style="@style/text_color"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="See More"
-        android:textColor="@color/white"
+        android:textColor="@color/purple_light_two"
         app:layout_constraintBottom_toBottomOf="@+id/arrow_More"
         app:layout_constraintEnd_toStartOf="@+id/arrow_More"
         app:layout_constraintTop_toTopOf="@+id/arrow_More" />
@@ -37,7 +37,8 @@
         android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        style="@style/tint_arrow"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_movies_category"
