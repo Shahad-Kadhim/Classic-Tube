@@ -5,15 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.classictube.R
 import com.example.classictube.data.response.MoviesItem
-import com.example.classictube.databinding.ItemSaveMovieBinding
+import com.example.classictube.databinding.ItemPlayListMovieBinding
 
-class SaveAdapter(items : List<MoviesItem>, listener : HomeActionListener) : BaseRecyclerAdapter<MoviesItem>(items,listener) {
+class PlayListAdapter(items : List<MoviesItem>, listener : HomeActionListener) : BaseRecyclerAdapter<MoviesItem>(items,listener) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
     ): BaseMovieViewHolder = FavoritesViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_save_movie,parent,false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_play_list_movie,parent,false)
     )
     override fun onBindViewHolder(holder: BaseMovieViewHolder, position: Int) {
         when(holder){
@@ -25,6 +25,6 @@ class SaveAdapter(items : List<MoviesItem>, listener : HomeActionListener) : Bas
         }
     }
     class FavoritesViewHolder(itemView : View):BaseRecyclerAdapter.BaseMovieViewHolder(itemView){
-        val binding = ItemSaveMovieBinding.bind(itemView)
+        val binding = ItemPlayListMovieBinding.bind(itemView)
     }
 }
