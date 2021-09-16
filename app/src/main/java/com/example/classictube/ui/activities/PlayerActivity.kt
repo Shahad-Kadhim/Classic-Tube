@@ -16,16 +16,19 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
 
     private lateinit var simpleExoPlayer: SimpleExoPlayer
 
-    val STREAM_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
 
     override fun addCallbacks() {   }
 
-    override fun setUp() { initializePlayer() }
+    override fun setUp() {
+        intent.getStringExtra("URL_KEY")?.let{
+            initializePlayer(it)
+        }
+    }
 
-    private fun initializePlayer() {
+    private fun initializePlayer(url:String) {
         simpleExoPlayer = SimpleExoPlayer.Builder(this).build()
         binding!!.videoPlayer.player = simpleExoPlayer
-        val mediaItem = MediaItem.fromUri(STREAM_URL)
+        val mediaItem = MediaItem.fromUri(url)
         setPlayer(mediaItem)
 
     }
