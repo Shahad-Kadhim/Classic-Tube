@@ -1,8 +1,13 @@
 package com.example.classictube.ui.fragments
 
 
+import android.content.Intent
 import android.view.LayoutInflater
+import com.bumptech.glide.Glide
+import com.example.classictube.data.response.MoviesItem
 import com.example.classictube.databinding.FragmentDetailsBinding
+import com.example.classictube.ui.activities.PlayerActivity
+import com.example.classictube.util.Constant
 
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
@@ -13,7 +18,26 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override fun addCallbacks() {   }
 
-    override fun setUp() {   }
+    override fun setUp() {
+        arguments?.let {
+            val movie:MoviesItem=it.getParcelable(Constant.MOVIE_KEY)!!
+            binding?.apply {
+                movieSynopsis.text=movie.description
+                movieName.text=movie.title
+                movie.ratings?.let{ movieRating.rating = 2.9f }
+                movieTime.text=movie.duration.toString()
+                Glide.with(movieImage).load(movie.art).centerInside().into(movieImage)
+                playerButton.setOnClickListener { watchMovie(movie)}
+            }
+        }
+    }
 
-
+    private fun watchMovie(movie: MoviesItem){
+        // add to database
+        // insertIntoWatched(movie)
+        startActivity(
+            Intent(requireActivity(), PlayerActivity::class.java)
+                .putExtra(Constant.URL_KEY,movie.url)
+        )
+    }
 }
