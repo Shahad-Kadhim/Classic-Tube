@@ -17,8 +17,6 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
 
     private lateinit var simpleExoPlayer: SimpleExoPlayer
 
-
-
     override fun setUp() {
         intent.getStringExtra(Constant.URL_KEY)?.let{
             initializePlayer(it)

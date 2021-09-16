@@ -16,7 +16,6 @@
             android:name=".ui.activities.PlayerActivity"
             android:configChanges="orientation|screenSize|layoutDirection"
             android:exported="true" >
-
         </activity>
         <activity
             android:name=".ui.activities.TabActivity"

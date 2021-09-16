@@ -1,6 +1,7 @@
 package com.example.classictube.ui.fragments
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
@@ -26,9 +27,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
     override fun addCallbacks() {}
 
     override fun setUp() {
+        loadSplash()
         Network.makeRequest(this::onSuccess,this::onError)
+    }
+
+    fun loadSplash(){
+        activity?.actionBar?.hide()
+
+        Handler().postDelayed(object : Runnable{
+            override fun run() {
+                binding!!.splashLayout.animate()
+                    .translationY(-2500F)
+            }
+        } , 2000)
 
     }
+
     private fun onSuccess(feed:Feed){
         //move code to data manger
         val list= getNamesOfCategories(feed.feed!!)?.map { CategoryItem(it,moviesCategoryFilter(it,feed.feed!!)) }
