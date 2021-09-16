@@ -1,13 +1,11 @@
-package com.example.classictube.ui.adapter.movieAdapters
+package com.example.classictube.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.classictube.R
 import com.example.classictube.data.response.MoviesItem
-import com.example.classictube.databinding.ItemFavoriteMovieBinding
 import com.example.classictube.databinding.ItemWatchMovieBinding
-import com.example.classictube.ui.adapter.HomeActionListener
 
 class WatchMovieAdapter(items:List<MoviesItem>,listener:HomeActionListener) : BaseRecyclerAdapter<MoviesItem>(items,listener) {
 
@@ -19,7 +17,7 @@ class WatchMovieAdapter(items:List<MoviesItem>,listener:HomeActionListener) : Ba
     )
     override fun onBindViewHolder(holder: BaseMovieViewHolder, position: Int) {
         when(holder){
-            is WatchMoviesViewHolder->{
+            is WatchMoviesViewHolder ->{
                 holder.binding.apply {
 
                 }
