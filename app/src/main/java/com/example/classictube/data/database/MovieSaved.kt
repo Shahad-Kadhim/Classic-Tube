@@ -4,8 +4,8 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.text.Spanned
-import com.example.classictube.ui.util.MovieSaved
+import com.example.classictube.data.response.MoviesItem
+import com.example.classictube.util.DBConstant
 
 class MovieSaved(context: Context ) : BaseHelper(context ) {
 
@@ -13,50 +13,43 @@ class MovieSaved(context: Context ) : BaseHelper(context ) {
         db?.execSQL(MoviesSave())
     }
 
-    private fun MoviesSave() = "CREATE TABLE ${MovieSaved.TABLE_NAME} ( " +
-            "${MovieSaved.DESCRIPTION_CATEGORY} TEXT , " +
-            "${MovieSaved.IMAGE_CATEGORY} TEXT , " +
-            "${MovieSaved.ID_CATEGORY} INTEGER PRIMARY KEY , " +
-            "${MovieSaved.MOVIES_ITEMS_CATEGORY} TEXT , " +
-            "${MovieSaved.TITLE_CATEGORY} TEXT , " +
-            "${MovieSaved.ID_ITEM} INTEGER PRIMARY KEY , " +
-            "${MovieSaved.ART_ITEM} TEXT , " +
-            "${MovieSaved.YEAR_ITEM} TEXT , " +
-            "${MovieSaved.URL_ITEM} TEXT , " +
-            "${MovieSaved.DESCRIPTION_ITEM} TEXT , " +
-            "${MovieSaved.DIRECTOR_ITEM} TEXT , " +
-            "${MovieSaved.DURATION_ITEM} TEXT, " +
-            "${MovieSaved.TITLE_ITEM} TEXT , " +
-            "${MovieSaved.RATINGS_ITEM} TEXT , " +
-
-
+    private fun MoviesSave() = "CREATE TABLE ${DBConstant.SAVE_TABLE_NAME} ( " +
+            "${DBConstant.DESCRIPTION_KEY} TEXT , " +
+            "${DBConstant.IMAGE_KEY} TEXT , " +
+            "${DBConstant.ID_KEY} INTEGER PRIMARY KEY , " +
+            "${DBConstant.ART_KEY} TEXT , " +
+            "${DBConstant.YEAR_KEY} TEXT , " +
+            "${DBConstant.URL_KEY} TEXT , " +
+            "${DBConstant.DESCRIPTION_KEY} TEXT , " +
+            "${DBConstant.DIRECTOR_KEY} TEXT , " +
+            "${DBConstant.DURATION_KEY} TEXT, " +
+            "${DBConstant.TITLE_KEY} TEXT , " +
+            "${DBConstant.RATINGS_KEY} TEXT , " +
             ")"
 
-     fun insertMovieSave(item: List<MovieSaved>) {
+     fun insertMovieSave(movie: MoviesItem) {
             val db = this.writableDatabase
-            val contentValues = ContentValues().apply {
-                put(MovieSaved.DESCRIPTION_CATEGORY, item[0])
-                put(MovieSaved.IMAGE_CATEGORY, item[1])
-                put(MovieSaved.ID_CATEGORY, item[2])
-                put(MovieSaved.MOVIES_ITEMS_CATEGORY, item[3])
-                put(MovieSaved.TITLE_CATEGORY, item[4])
-                put(MovieSaved.ID_ITEM, item[5])
-                put(MovieSaved.ART_ITEM, item[6])
-                put(MovieSaved.YEAR_ITEM, item[7])
-                put(MovieSaved.URL_ITEM, item[8])
-                put(MovieSaved.DIRECTOR_ITEM, item[9])
-                put(MovieSaved.TITLE_ITEM, item[10])
-                put(MovieSaved.RATINGS_ITEM, item[11])
-            }
-            db.insert( MovieSaved.TABLE_NAME, null, contentValues)
+         val contentValues = ContentValues().apply {
+             put(DBConstant.DESCRIPTION_KEY,movie.description)
+             put(DBConstant.IMAGE_KEY, movie.art)
+             put(DBConstant.ID_KEY, movie.id)
+             put(DBConstant.ART_KEY, movie.art)
+             put(DBConstant.YEAR_KEY, movie.year)
+             put(DBConstant.URL_KEY,movie.url)
+             put(DBConstant.DIRECTOR_KEY, movie.director)
+             put(DBConstant.DURATION_KEY, movie.duration)
+             put(DBConstant.TITLE_KEY, movie.title)
+             put(DBConstant.RATINGS_KEY, movie.ratings?.first())
+         }
+            db.insert( DBConstant.SAVE_TABLE_NAME, null, contentValues)
         }
 
 
     fun deleteMovieSave(ID_ITEM: String) : Int {
         val db = this.writableDatabase
         return db.delete(
-            MovieSaved.TABLE_NAME,
-            "ID = ?",
+            DBConstant.SAVE_TABLE_NAME,
+            "${DBConstant.ID_KEY} = ?",
             arrayOf(ID_ITEM)
         )
     }
@@ -64,10 +57,9 @@ class MovieSaved(context: Context ) : BaseHelper(context ) {
     val allMovieSave : Cursor
         get() {
             val db = this.readableDatabase
-            val res = db.rawQuery("SELECT * FROM " + MovieSaved.TABLE_NAME, null)
+            val res = db.rawQuery("SELECT * FROM " + DBConstant.SAVE_TABLE_NAME, null)
             return res
         }
 
-    private fun ContentValues.put(Movie: Any, movieWatched: MovieSaved) {}
 
 }
