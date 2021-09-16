@@ -1,7 +1,6 @@
 package com.example.classictube.ui.fragments
 
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
@@ -31,16 +30,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
         Network.makeRequest(this::onSuccess,this::onError)
     }
 
-    fun loadSplash(){
-        activity?.actionBar?.hide()
-
-        Handler().postDelayed(object : Runnable{
-            override fun run() {
-                binding!!.splashLayout.animate()
-                    .translationY(-2500F)
-            }
-        } , 2000)
-
+    private fun loadSplash(){
+        binding!!.splashLayout.animate()
+            .translationY(-2500F)
+            .setDuration(1000).startDelay = 1000
     }
 
     private fun onSuccess(feed:Feed){
