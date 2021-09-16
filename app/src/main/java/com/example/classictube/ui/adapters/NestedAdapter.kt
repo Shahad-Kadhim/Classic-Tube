@@ -38,7 +38,7 @@ class  NestedAdapter (items: List<CategoryItem>, listener: HomeActionListener):
     private fun bindCategory(holder: CategoryViewHolder, currentItem: CategoryItem) {
             holder.binding.apply {
                 categoryName.text=currentItem.categoryName
-                recyclerMoviesCategory.adapter= CategoryAdapter(currentItem.movies,listener)
+                recyclerMoviesCategory.adapter= CategoriesAdapter(currentItem.movies,listener)
                 seeMore.setOnClickListener{
                     listener.onClickSeeMore(currentItem)
                 }
