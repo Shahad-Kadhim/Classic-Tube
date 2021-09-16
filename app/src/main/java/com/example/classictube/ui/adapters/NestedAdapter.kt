@@ -34,7 +34,15 @@ class  NestedAdapter (items: List<List<MoviesCategory>>, listener: HomeActionLis
             is HeaderViewHolder -> {
                 holder.binding.recyclerMoviesHeader.apply {
                     adapter= HeaderAdapter(currentItem,listener)
+
+                    //recycler header motion
+                    val layoutManager = CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL)
+                    this.layoutManager = layoutManager
+                    this.setHasFixedSize(true)
+                    layoutManager.setPostLayoutListener(CarouselZoomPostLayoutListener())
                 }
+
+
             }
             is CategoryViewHolder -> {
                 holder.binding.recyclerMoviesCategory.apply {

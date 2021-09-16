@@ -3,9 +3,12 @@ package com.example.classictube.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.classictube.R
 import com.example.classictube.data.domain.CategoryItem
 import com.example.classictube.databinding.ItemMovieHeaderBinding
+import com.mig35.carousellayoutmanager.CarouselLayoutManager
+import com.mig35.carousellayoutmanager.CarouselZoomPostLayoutListener
 
 
 class HeaderAdapter(items: List<CategoryItem>, listener: HomeActionListener) :
