@@ -25,9 +25,8 @@
         android:layout_height="wrap_content"
         android:text="See More"
         android:textColor="@color/purple_light_two"
-        app:layout_constraintBottom_toBottomOf="@+id/arrow_More"
-        app:layout_constraintEnd_toStartOf="@+id/arrow_More"
-        app:layout_constraintTop_toTopOf="@+id/arrow_More" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/category_name"
+        app:layout_constraintEnd_toStartOf="@+id/arrow_More" />
 
     <ImageView
         android:id="@+id/arrow_More"
@@ -44,7 +43,7 @@
         android:id="@+id/recycler_movies_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginVertical="8dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
