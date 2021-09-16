@@ -3,7 +3,7 @@
     <style name="Theme.ClassicTube" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/background</item>
+        <item name="colorPrimaryVariant">@color/off_white</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+
+
 
     </style>
 
@@ -23,6 +26,7 @@
     <style name="Theme.ClassicTube.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.ClassicTube.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
     //image category shape
     <style name="ImageShape" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="cornerSize">20dp</item>
@@ -33,5 +37,27 @@
         <item name="colorControlActivated">@color/yellow</item>
         <item name="colorControlNormal">#ffffff</item>
     </style>
+
+
+    <style name="Background">
+        <item name="android:background">@color/off_white</item>
+    </style>
+
+    <style name="text_color">
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+    <style name="tint">
+        <item name="tint">@color/dark_blue</item>
+    </style>
+
+    <style name="tint_arrow">
+        <item name="tint">@color/dark_blue</item>
+    </style>
+
+    <style name="Background_tint">
+        <item name="android:backgroundTint">@color/off_white</item>
+    </style>
+
 
 </resources>

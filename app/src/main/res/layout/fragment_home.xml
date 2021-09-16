@@ -5,52 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    style="@style/Background"
     tools:context=".ui.fragments.HomeFragment">
-
-    <TextView
-        android:id="@+id/app_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/now_showing"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:src="@drawable/ic_baseline_check_circle_24"
-        app:layout_constraintBottom_toBottomOf="@+id/app_title"
-        app:layout_constraintStart_toEndOf="@+id/app_title"
-        app:layout_constraintTop_toTopOf="@+id/app_title"
-        app:tint="@color/white" />
-
-    <TextView
-        android:id="@+id/description_app_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Movies On Cinemas"
-        android:textColor="@color/description_title"
-        android:textSize="19sp"
-        app:layout_constraintStart_toStartOf="@+id/app_title"
-        app:layout_constraintTop_toBottomOf="@+id/app_title" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_arrow_drop_down_24"
-        app:layout_constraintBottom_toBottomOf="@+id/description_app_title"
-        app:layout_constraintStart_toEndOf="@+id/description_app_title"
-        app:layout_constraintTop_toTopOf="@+id/description_app_title"
-        app:tint="@color/description_title"/>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_Nested"
@@ -61,8 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_app_title"
-        tools:listitem="@layout/item_movie_header"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_movie_header" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

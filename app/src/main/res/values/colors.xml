@@ -11,10 +11,11 @@
 
 
 
-    <color name="background">#120C21</color>
+    <color name="dark_blue">#120C21</color>
     <color name="purple_light">#A3AC6CFA</color>
-    <color name="description_title">#5C5071</color>
+    <color name="purple_light_two">#5C5071</color>
     <color name="yellow">#D1BE18</color>
+    <color name="off_white">#6BFFD691</color>
 
 
 

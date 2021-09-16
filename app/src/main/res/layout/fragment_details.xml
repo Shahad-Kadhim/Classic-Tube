@@ -149,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:backgroundTint="@color/description_title"
+        android:backgroundTint="@color/purple_light_two"
         app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
