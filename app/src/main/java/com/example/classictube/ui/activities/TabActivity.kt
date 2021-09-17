@@ -15,6 +15,7 @@ class TabActivity : BaseActivity<ActivityTabBinding>() {
 
 
     override fun setUp() {
+        setTheme(R.style.Theme_ClassicTube)
         replaceFragment(HomeFragment())
     }
 

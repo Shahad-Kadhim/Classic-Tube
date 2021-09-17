@@ -26,14 +26,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
     override fun addCallbacks() {}
 
     override fun setUp() {
-        loadSplash()
         Network.makeRequest(this::onSuccess,this::onError)
-    }
-
-    private fun loadSplash(){
-        binding!!.splashLayout.animate()
-            .translationY(-2500F)
-            .setDuration(800).startDelay = 500
     }
 
     private fun onSuccess(feed:Feed){

@@ -34,5 +34,9 @@
         <item name="colorControlActivated">@color/yellow</item>
         <item name="colorControlNormal">#ffffff</item>
     </style>
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
 
 </resources>
