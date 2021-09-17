@@ -45,4 +45,10 @@
         <item name="tint">@color/white</item>
     </style>
 
+    <style name="Background_tint_details">
+        <item name="android:backgroundTint">@color/purple_light_two</item>
+    </style>
+
+
+
 </resources>
