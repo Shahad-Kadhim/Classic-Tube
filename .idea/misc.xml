@@ -4,9 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable-v24/date_baground.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable-v24/shade_header_movie.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/detials_item_background.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/like.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/shap_background.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/drawable/splash_screen.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/MJ/ClassicTube/app/src/main/res/layout/activity_home.xml" value="0.22" />

@@ -212,6 +212,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="24dp"
+        android:visibility="invisible"
         android:layout_marginBottom="24dp"
         android:button="@drawable/custom_checked"
         android:paddingStart="8dp"

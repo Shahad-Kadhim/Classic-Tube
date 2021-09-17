@@ -55,7 +55,6 @@ class  NestedAdapter (items: List<CategoryItem>, listener: HomeActionListener):
                 setHasFixedSize(true)
             }
             this.goToPlayListBtn.setOnClickListener { listener.onClickGoToPlayList() }
-//            goToSaved.onClickListener{listener.onClickGoToSaved()}
         }
     }
 
