@@ -28,6 +28,7 @@ class CategoryAdapter(items:List<MoviesItem>, listener:HomeActionListener) : Bas
             year.text=movie.year.toString()
             Glide.with(imageMovie).load(movie.art).into(imageMovie)
             categoryName.text=movie.movieCategoryName
+            imageMovie.setOnClickListener { listener.onClickMovie(movie) }
         }
     }
 
