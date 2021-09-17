@@ -1,10 +1,10 @@
-package com.example.classictube.data.database
+package com.example.classictube.ui.util
 
 
 
-object MovieDB {
+object MovieSaved {
 
-    const val TABLE_NAME  = "Movies"
+    const val TABLE_NAME  = "WatchingMovies"
     const val DESCRIPTION_CATEGORY  = "DESCRIPTION_CATEGORY "
     const val ID_CATEGORY = "0 "
     const val IMAGE_CATEGORY = "IMAGE_CATEGORY "
@@ -19,9 +19,5 @@ object MovieDB {
     const val TITLE_ITEM = "TITLE_ITEM"
     const val URL_ITEM = "http://URL_ITEM"
     const val YEAR_ITEM = 2021
-
-
-
-
 
 }

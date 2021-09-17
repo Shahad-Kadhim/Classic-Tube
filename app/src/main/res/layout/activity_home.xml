@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.HomeActivity">
 
-    <EditText
-        android:id="@+id/inputid1_text"
+    <ListView
+        android:id="@+id/list_text"
         android:layout_width="239dp"
         android:layout_height="24dp"
         android:layout_marginTop="72dp"
@@ -15,14 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/inputid2_text"
-        android:layout_width="239dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageButton
         android:id="@+id/add"
@@ -32,10 +25,10 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/ic_baseline_add_circle_outline_24"
-        app:layout_constraintBottom_toBottomOf="@+id/inputid1_text"
-        app:layout_constraintEnd_toStartOf="@+id/inputid1_text"
+        app:layout_constraintBottom_toBottomOf="@+id/list_text"
+        app:layout_constraintEnd_toStartOf="@+id/list_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputid1_text"
+        app:layout_constraintTop_toTopOf="@+id/list_text"
         app:layout_constraintVertical_bias="0.888" />
 
 
@@ -43,15 +36,12 @@
         android:id="@+id/delet"
         android:layout_width="33dp"
         android:layout_height="26dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="44dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/ic_baseline_delete_24"
-        app:layout_constraintBottom_toBottomOf="@+id/inputid2_text"
-        app:layout_constraintEnd_toStartOf="@+id/inputid2_text"
+        app:layout_constraintBottom_toBottomOf="@+id/add"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputid2_text"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintTop_toTopOf="@+id/add" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

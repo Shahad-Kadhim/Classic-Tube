@@ -3,20 +3,20 @@ package com.example.classictube.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.classictube.data.database.MovieDbHelper
+import com.example.classictube.data.database.MovieSaved
 import com.example.classictube.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityHomeBinding
-    lateinit var database: MovieDbHelper
+    lateinit var database: MovieSaved
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        database = MovieDbHelper(applicationContext)
+        database = MovieSaved(applicationContext)
 
         handleInserts()
         handleDeletes()
@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         binding.apply {
             add.setOnClickListener {
             try {
-                database.insertData(inputid1Text.text.toString(), inputid2Text.text.toString(), )
+                database.insertMovieSave(listText.toString())
                 clearEditTexts()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -52,7 +52,7 @@ class HomeActivity : AppCompatActivity() {
         binding.apply {
             delet.setOnClickListener {
                 try {
-                    database.deleteData(inputid1Text.text.toString())
+                    database.deleteMovieSave(inputid1Text.text.toString())
                     clearEditTexts()
                 } catch (e: Exception) {
                     e.printStackTrace()
