@@ -54,7 +54,7 @@ class  NestedAdapter (items: List<CategoryItem>, listener: HomeActionListener):
                 }
                 setHasFixedSize(true)
             }
-            this.imageView.setOnClickListener { listener.onClickGoToSaved() }
+            this.goToPlayListBtn.setOnClickListener { listener.onClickGoToPlayList() }
 //            goToSaved.onClickListener{listener.onClickGoToSaved()}
         }
     }

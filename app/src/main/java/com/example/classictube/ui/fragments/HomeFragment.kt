@@ -3,6 +3,7 @@ package com.example.classictube.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.classictube.R
 import com.example.classictube.data.Network
@@ -31,13 +32,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
         this.requireActivity().runOnUiThread {
             binding?.apply {
                 recycler.adapter=NestedAdapter(getListsOfCategories(feed.feed!!),this@HomeFragment)
+                recycler.show()
+                imageError.hide()
+                imageLoading.hide()
             }
         }
     }
 
     private fun onError(message:String){
-        //show error image
-        Log.i(LOG_TAG,message)
+        requireActivity().runOnUiThread {
+            binding?.apply {
+                imageLoading.hide()
+                imageError.show()
+                recycler.hide()
+            }
+        }
     }
 
     override fun onClickMovie(movie: MoviesItem) {
@@ -59,7 +68,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
        )
     }
 
-    override fun onClickGoToSaved() {
+    override fun onClickGoToPlayList() {
         addFragment(PlayListFragment())
     }
 
@@ -71,4 +80,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
             .addToBackStack(null)
             .commit()
     }
+
+    fun View.hide(){
+        this.visibility=View.INVISIBLE
+    }
+
+    fun View.show(){
+        this.visibility=View.VISIBLE
+    }
 }
+

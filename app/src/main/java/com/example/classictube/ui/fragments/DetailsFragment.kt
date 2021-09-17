@@ -20,7 +20,12 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     private lateinit var movie :MoviesItem
     override fun addCallbacks() {
-        binding?.playerButton?.setOnClickListener { watchMovie(movie)}
+        binding?.apply {
+            playerButton.setOnClickListener { watchMovie(movie)}
+            backButton.setOnClickListener {
+                activity?.supportFragmentManager?.popBackStack();
+            }
+        }
     }
 
     override fun setUp() {

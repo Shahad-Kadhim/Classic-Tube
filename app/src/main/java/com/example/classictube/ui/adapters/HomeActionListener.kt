@@ -6,5 +6,5 @@ import com.example.classictube.data.response.MoviesItem
 interface  HomeActionListener{
     fun onClickMovie(movie:MoviesItem)
     fun onClickSeeMore(category: CategoryItem)
-    fun onClickGoToSaved()
+    fun onClickGoToPlayList()
 }

@@ -54,6 +54,7 @@
 
 
     <ImageView
+        android:id="@+id/go_to_play_list_btn"
         style="@style/tint_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
