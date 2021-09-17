@@ -7,8 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.classictube.R
 import com.example.classictube.data.Network
 import com.example.classictube.data.domain.CategoryItem
-import com.example.classictube.data.getNamesOfCategories
-import com.example.classictube.data.moviesCategoryFilter
+import com.example.classictube.data.getListsOfCategories
 import com.example.classictube.data.response.Feed
 import com.example.classictube.data.response.MoviesItem
 import com.example.classictube.databinding.FragmentHomeBinding
@@ -27,22 +26,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
 
     override fun setUp() {
         Network.makeRequest(this::onSuccess,this::onError)
-
     }
     private fun onSuccess(feed:Feed){
-        //move code to data manger
-        val list= getNamesOfCategories(feed.feed!!)?.map { CategoryItem(it,moviesCategoryFilter(it,feed.feed!!)) }
-        val fullList: List<CategoryItem> =
-            mutableListOf(
-                CategoryItem("",feed.feed.flatMap { it.moviesItems })
-            ).also{
-                it.addAll(list!!)
-            }
-        //
         this.requireActivity().runOnUiThread {
             binding?.apply {
-                recycler.adapter=NestedAdapter(fullList,this@HomeFragment)
-           }
+                recycler.adapter=NestedAdapter(getListsOfCategories(feed.feed!!),this@HomeFragment)
+            }
         }
     }
 
