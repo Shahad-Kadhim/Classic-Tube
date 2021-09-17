@@ -1,11 +1,13 @@
 package com.example.classictube.data.response
 
 
+import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import java.util.ArrayList
 
+@SuppressLint("ParcelCreator")
 data class MoviesItem(
     @SerializedName("art")
     val art: String?,
@@ -26,42 +28,9 @@ data class MoviesItem(
     @SerializedName("year")
     val year: Int?
 ):Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.createStringArrayList(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int
-    ) {
+    override fun describeContents() =0
+    override fun writeToParcel(p0: Parcel?, p1: Int) {
     }
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(art)
-        parcel.writeString(description)
-        parcel.writeString(director)
-        parcel.writeValue(duration)
-        parcel.writeString(id)
-        parcel.writeStringList(ratings)
-        parcel.writeString(title)
-        parcel.writeString(url)
-        parcel.writeValue(year)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<MoviesItem> {
-        override fun createFromParcel(parcel: Parcel): MoviesItem {
-            return MoviesItem(parcel)
-        }
-
-        override fun newArray(size: Int): Array<MoviesItem?> {
-            return arrayOfNulls(size)
-        }
-    }
+    lateinit var movieCategoryName:String
 }

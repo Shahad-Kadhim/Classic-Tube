@@ -4,7 +4,7 @@ import com.example.classictube.data.domain.CategoryItem
 import com.example.classictube.data.response.MoviesCategory
 
 fun moviesCategoryFilter(title: String, categoryList: List<MoviesCategory>) =
-    categoryList.filter { it.title == title }.first().moviesItems
+    categoryList.filter { it.title == title }.first().moviesItems.apply {  forEach { it.movieCategoryName=title }}
 
 
 fun getListsOfCategories(categoryList: List<MoviesCategory>): List<CategoryItem> {

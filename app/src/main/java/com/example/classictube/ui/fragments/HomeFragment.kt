@@ -72,15 +72,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeActionListener {
         addFragment(PlayListFragment())
     }
 
-    private fun addFragment(fragment: Fragment){
-        requireActivity()
-            .supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_container, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
     fun View.hide(){
         this.visibility=View.INVISIBLE
     }

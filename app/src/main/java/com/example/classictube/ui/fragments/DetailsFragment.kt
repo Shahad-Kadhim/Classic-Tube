@@ -38,6 +38,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
                 movieTime.text=movie.duration.toString()
                 year.text = movie.year.toString()
                 Glide.with(movieImage).load(movie.art).centerInside().into(movieImage)
+                categoryName.text=movie.movieCategoryName
             }
         }
     }
