@@ -50,7 +50,7 @@
     </style>
 
     <style name="tint_save">
-        <item name="tint">@color/pink</item>
+        <item name="tint">@color/dark_blue</item>
     </style>
 
     <style name="tint">

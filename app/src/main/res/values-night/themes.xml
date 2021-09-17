@@ -37,6 +37,10 @@
         <item name="backgroundTint">@color/background_dark_theme</item>
     </style>
 
+    <style name="tint_save">
+        <item name="tint">@color/off_yellow</item>
+    </style>
+
     <style name="tint_sign">
         <item name="tint">@color/white</item>
     </style>

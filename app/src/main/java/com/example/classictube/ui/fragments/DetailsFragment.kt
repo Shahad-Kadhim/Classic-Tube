@@ -23,7 +23,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         binding?.apply {
             playerButton.setOnClickListener { watchMovie(movie)}
             backButton.setOnClickListener {
-                activity?.supportFragmentManager?.popBackStack();
+                activity?.supportFragmentManager?.popBackStack()
             }
         }
     }
