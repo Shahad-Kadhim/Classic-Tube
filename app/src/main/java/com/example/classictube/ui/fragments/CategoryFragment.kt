@@ -17,7 +17,9 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() ,HomeActionList
     override val bindingInflater: (LayoutInflater) ->
     FragmentCategoryBinding = FragmentCategoryBinding::inflate
 
-    override fun addCallbacks() {   }
+    override fun addCallbacks() {
+
+    }
 
     override fun setUp() {
        arguments?.let {
@@ -25,8 +27,10 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() ,HomeActionList
            binding?.apply {
                categoryName.text=category.categoryName
                recyclerCategory.adapter=CategoryAdapter(category.movies,this@CategoryFragment)
+               backButton.setOnClickListener {
+                   activity?.supportFragmentManager?.popBackStack()
+               }
            }
-
        }
     }
 
